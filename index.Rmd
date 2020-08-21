@@ -19,7 +19,6 @@ source("code/graficos_latam.R")
 Sys.setlocale(locale = "es_ES.UTF-8")
 ```
 
-<center><h2>¿Dónde se está aplanando la curva?</h2></center>
 <center><h4>Nuevos casos confirmados por semana</h4></center>
 
 ```{r, include=T, echo = F,  fig.height = 21, fig.width = 20}
