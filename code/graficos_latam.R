@@ -63,7 +63,7 @@ df_mundo %>%
   ungroup() %>% 
   mutate(
     titulo = paste0(pais_nombre_corto, ", ", casos, " casos", "\n", total_semanas,  
-                    " semanas desde paciente 0", "\n", " Casos últ. semana:", ult_semana)
+                    " semanas desde paciente 0", "\n", "Casos últ. semana:", ult_semana)
   ) -> temp
 
 
@@ -81,7 +81,7 @@ temp %>%
   ggplot(aes(semana, incidencia, fill = continente)) + 
   geom_col(color = NA, alpha = 0.9, fill = "#CB1724") + 
   facet_wrap(vars(fct_reorder(titulo, num, .desc = T)), scales = "free", ncol = 4) +
-  hrbrthemes::theme_ipsum_rc(grid = F, base_family = "Source Code Pro Medium", strip_text_size = 15) +
+  hrbrthemes::theme_ipsum_rc(grid = F, base_family = "Open Sans", strip_text_size = 18) +
   theme(
     axis.text.x = element_blank(),
     axis.text.y = element_blank(),
@@ -132,7 +132,7 @@ temp %>%
   ggplot(aes(semana, incidencia, fill = continente)) + 
   geom_col(color = NA, alpha = 0.9, fill = "#09283C") + 
   facet_wrap(vars(fct_reorder(titulo, num, .desc = T)), scales = "free", ncol = 4) +
-  hrbrthemes::theme_ipsum_rc(grid = F, base_family = "Source Code Pro Medium", strip_text_size = 15) +
+  hrbrthemes::theme_ipsum_rc(grid = F, base_family = "Open Sans", strip_text_size = 18) +
   theme(
     axis.text.x = element_blank(),
     axis.text.y = element_blank(),
