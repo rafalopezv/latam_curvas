@@ -19,14 +19,21 @@ source("code/graficos_latam.R")
 Sys.setlocale(locale = "es_ES.UTF-8")
 ```
 
-<center><h4>Nuevos casos confirmados por semana</h4></center>
+<h2 style = color: #000000;>
+    Nuevos casos <span style = "color: #e61b72">confirmados</span> por semana 
+</h2>
+
 
 ```{r, include=T, echo = F,  fig.height = 21, fig.width = 20}
 curva_confirmados
 ```
 <br>
 <br>
-<center><h2>Nuevos casos de fallecidos por semana</h2></center>
+
+<h2 style = color: #000000;>
+    Nuevos casos de<span style = "color: #e61b72"> fallecidos</span> por semana 
+</h2>
+
 ```{r, include=T, echo = F,  fig.height = 21, fig.width = 20}
 curva_fallecidos
 ```
