@@ -87,7 +87,7 @@ df_mundo %>%
             highlightColor = "#f0f5f9",
             cellPadding = "8px 12px",
             style = list(
-              fontFamily = "Source Code Pro",
+              fontFamily = "Open Sans",
               fontSize = "14px"
             ),
             searchInputStyle = list(width = "100%")
