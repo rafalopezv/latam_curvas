@@ -20,20 +20,78 @@ Sys.setlocale(locale = "es_ES.UTF-8")
 ```
 
 <h2 style = color: #000000;>
-    Nuevos casos <span style = "color: #e61b72">confirmados</span> por semana 
+    Nuevos casos <span style = "color: #e61b72"><b>confirmados</b></span> por semana 
 </h2>
 
 
 ```{r, include=T, echo = F,  fig.height = 21, fig.width = 20}
 curva_confirmados
 ```
+<small><small><small>
+Elaboración propia con base en los datos de [Jhons Hopkins University](https://github.com/CSSEGISandData/COVID-19)
+</small></small></small>
 <br>
 <br>
 
 <h2 style = color: #000000;>
-    Nuevos casos de<span style = "color: #e61b72"> fallecidos</span> por semana 
+    Nuevos casos de<span style = "color: #e61b72"><b> fallecidos</b></span> por semana 
 </h2>
 
 ```{r, include=T, echo = F,  fig.height = 21, fig.width = 20}
 curva_fallecidos
 ```
+<small><small><small>
+Elaboración propia con base en los datos de [Jhons Hopkins University](https://github.com/CSSEGISandData/COVID-19)
+</small></small></small>
+<br>
+<br>
+<br>
+Aquí encontrará datos con indicadores útiles en formato de tabla para 188 países del mundo, actualizados diariamente. 
+
+```{r, echo=F, warning=F, message=F}
+library(reactable)
+codigos <- read_csv("input/codigos_covid_paises.csv")
+codigos %<>% dplyr::select(pais_region = country_region, pais_nombre_corto)
+
+
+df_mundo %>%
+  merge(., codigos, all.x = T) %>% 
+  mutate(
+    "Infectados/Fallecidos por millón de habitates" = casos_acumulados/poblacion * 1000000,
+    "Infectados/Fallecidos por millón de habitates" = round(`Infectados/Fallecidos por millón de habitates`, 0), 
+    base = str_to_title(base)
+  ) %>% 
+  dplyr::select(
+    `País` = pais_nombre_corto, `Medición` = base, Fecha = fecha, `Total semanas desde paciente 0` =
+      total_semanas,  `Infectados/Fallecidos por millón de habitates`, `Casos Acumulados` = casos_acumulados, 
+    `Nuevos casos` = incidencia
+  ) %>% 
+  arrange(`País`, desc(Fecha)) %>% 
+  reactable(groupBy = c("País", "Medición"),
+            language = reactableLang(
+              searchPlaceholder = "Buscar país...",
+              noData = "No fue encontrado",
+              pageInfo = "{rowStart} - {rowEnd} de {rows} filas",
+              pagePrevious = "\u276e",
+              pageNext = "\u276f",
+              pagePreviousLabel = "Anterior",
+              pageNextLabel = "Siguiente"
+  ),
+          searchable = TRUE,
+          striped = TRUE,
+          highlight = TRUE,
+          bordered = TRUE,
+          theme = reactableTheme(
+            borderColor = "#dfe2e5",
+            stripedColor = "#f6f8fa",
+            highlightColor = "#f0f5f9",
+            cellPadding = "8px 12px",
+            style = list(
+              fontFamily = "Source Code Pro",
+              fontSize = "14px"
+            ),
+            searchInputStyle = list(width = "100%")
+            )
+)
+```
+
