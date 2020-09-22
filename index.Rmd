@@ -51,9 +51,7 @@ Elaboración propia con base en los datos de [Jhons Hopkins University](https://
     Datos con indicadores útiles para<span style = "color: #e61b72"><b> 188 países del mundo.</b></span> Actualización diaria
 </h2>
  
-<small><small>Aquí encontrará datos con indicadores útiles en formato de tabla para 188 países del mundo, actualizados diariamente. 
-
-Cada país tiene un triángulo negro que al hacer click sobre él se despliegan dos opciones: Confirmados y Fallecidos; los números entre paréntesis muestran los días que se tienen registrados para ese país y esa categoría. Seguidamente, puede presionar el triángulo de 'Confirmados' y/ó 'Fallecidos' y podrá ver la base de datos completa.</small></small>
+<small><small>Cada país tiene un triángulo negro que al hacer click sobre él se despliegan dos opciones: Confirmados y Fallecidos; los números entre paréntesis muestran los días que se tienen registrados para ese país y esa categoría. Seguidamente, puede presionar el triángulo de 'Confirmados' y/ó 'Fallecidos' y podrá ver la base de datos completa.</small></small>
 
 ```{r, echo=F, warning=F, message=F}
 library(reactable)
