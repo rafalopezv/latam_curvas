@@ -3,6 +3,7 @@
 # -------------------------------------------------------------------
 # función sobre primedio == 6.48  y desviación estandar de == 3.83
 # -------------------------------------------------------------------
+
 epistim_intervalo_1 <- function(.data) {
   .data %>% 
     dplyr::select(base, pais_region, fecha, I = incidencia) -> temp
@@ -75,7 +76,7 @@ rt_tiempo <- function(.data) {
         lineWidth = 3
       )
     ) %>% 
-    hc_chart(style = list(fontFamily = "Source Code Pro")) %>%
+    hc_chart(style = list(fontFamily = "Open Sans")) %>%
     hc_tooltip(enabled = T, valueDecimals = 3, borderWidth = 0.01,
                pointFormat=paste("<b>{point.pais_nombre_corto}</b><br>
                                Rt: <b>{point.promedio}</b><br>
@@ -91,5 +92,10 @@ rt_tiempo <- function(.data) {
              align = "center") %>% 
     hc_legend(verticalAlign = "top")
 }
+
+
+
+
+
 
 
