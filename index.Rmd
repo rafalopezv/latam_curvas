@@ -28,7 +28,7 @@ Sys.setlocale(locale = "es_ES.UTF-8")
 curva_confirmados
 ```
 <small><small><small>
-Elaboración propia con base en los datos de [Jhons Hopkins University](https://github.com/CSSEGISandData/COVID-19)
+Elaboración propia con base en los datos de [Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19)
 </small></small></small>
 <br>
 <br>
@@ -41,7 +41,7 @@ Elaboración propia con base en los datos de [Jhons Hopkins University](https://
 curva_fallecidos
 ```
 <small><small><small>
-Elaboración propia con base en los datos de [Jhons Hopkins University](https://github.com/CSSEGISandData/COVID-19)
+Elaboración propia con base en los datos de [Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19)
 </small></small></small>
 <br>
 <br>
